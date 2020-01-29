@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eloquent Javascript: The cat's hat exercise:</title>
+</head>
+<body style="font-family: Arial; font-size: 12px">
+    <p>
+        <a href="1.html">#1</a>
+        <a href="2.html">#2</a>
+        <a href="3.html">#3</a>
+        <a href="4.html">#4</a>
+        <a href="5.html">#5</a>
+    </p>
+    <p>
+        illustrations by <a href="https://minjae-lee.com">minjae lee</a>
+    </p>
+<img src="donut-rabbit.png" id="cat" style="position: absolute">
+<img src="snake1.png" id="hat" style="position: absolute">
+<script>
+  var cat = document.querySelector("#cat");
+  var hat = document.querySelector("#hat");
+  var angle = 0, lastTime = null;
+  function animate(time) {
+    if (lastTime != null)
+    angle += (time - lastTime) * 0.001;
+    lastTime = time;
+    var catTop = (Math.sin(angle) * 20) + 40;
+    var catLeft = (Math.cos(angle) * 200) + 250;
+    cat.style.top = catTop + "px";
+    cat.style.left = catLeft + "px";
+    hat.style.top = (Math.sin(angle*6) * 40) + catTop - 20 + "px";
+    hat.style.left = (Math.cos(angle*6) * 60) + catLeft + "px";
+    requestAnimationFrame(animate); 
+  }
+  requestAnimationFrame(animate);
+</script>
+</body>
+</html>
