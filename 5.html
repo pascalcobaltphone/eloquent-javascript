@@ -24,7 +24,7 @@
   var angle = 0, lastTime = null;
   function animate(time) {
     if (lastTime != null)
-    angle += (time - lastTime) * 0.001;
+    angle += (time - lastTime) * 0.002;
     lastTime = time;
     var catTop = (Math.sin(angle) * 20) + 40;
     var catLeft = (Math.cos(angle) * 200) + 250;
